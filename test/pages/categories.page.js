@@ -53,7 +53,7 @@ class CategoriesPage {
       await this.tambahButton.click();
       await this.namaInput.setValue(nama);
       await this.deskripsiInput.setValue(deskripsi);
-      await this.buttonSimpan.click;
+      await this.buttonSimpan.click();
     }
 
   }
