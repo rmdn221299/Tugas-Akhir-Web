@@ -10,8 +10,14 @@ When(/^I login with valid credentials$/, async () => {
   await LoginPage.login('ramdani122299@gmail.com','123123123');
 });
 
-Then(/^I should be on the inventory page$/, async () => {
-  await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
+When(/^I should be on the dashboard page$/, async () => {
+  await expect(browser).toHaveUrl('kasirdemo.belajarqa.com/dashboard');
+  await LoginPage.browser(3000);
+});
+
+
+Then(/^I logout$/, async () => {
+  await expect(browser).toHaveUrl('kasirdemo.belajarqa.com');
 });
 
 When(/^I login with invalid email$/, async () => {
@@ -20,7 +26,7 @@ When(/^I login with invalid email$/, async () => {
 
 Then(/^I should see an error message$/, async () => {
   const errorMessage = await LoginPage.errorMessage;
-  await expect(errorMessage).toHaveTextContaining('Epic sadface: Username and password do not match any user in this service');
+  await expect(errorMessage).toHaveTextContaining('"email" is not allowed to be empty');
 });
 
 //Data driven test (Scenario Outline) step definitions
