@@ -9,5 +9,5 @@ Feature: Saudemo Login Scenario
     @all
     Scenario: Verify login failed with invalid username
     Given I open Saucedemo website
-    When I login with invalid username
+    When I login with invalid email
     Then I should see an error message

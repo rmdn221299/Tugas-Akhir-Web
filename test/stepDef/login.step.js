@@ -7,15 +7,15 @@ Given(/^I open Saucedemo website$/, async () => {
 });
 
 When(/^I login with valid credentials$/, async () => {
-  await LoginPage.login('standard_user', 'secret_sauce');
+  await LoginPage.login('ramdani122299@gmail.com','123123123');
 });
 
 Then(/^I should be on the inventory page$/, async () => {
   await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
 });
 
-When(/^I login with invalid username$/, async () => {
-  await LoginPage.login('invalid_user', 'secret_sauce');
+When(/^I login with invalid email$/, async () => {
+  await LoginPage.login('test.com ', '123456');
 });
 
 Then(/^I should see an error message$/, async () => {

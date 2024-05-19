@@ -1,6 +1,6 @@
 class LoginPage {
-    get userNameInput() {
-      return $('#user-name');
+    get emailInput() {
+      return $('#email');
     }
   
     get passwordInput() {
@@ -8,19 +8,19 @@ class LoginPage {
     }
   
     get loginButton() {
-      return $('#login-button');
+      return $('//*[@id="root"]/div/div/div/div[2]/div/button');
     }
   
     get errorMessage() {
-      return $('//*[@data-test="error"]');
+      return $('//*[@id="root"]/div/div/div/div[2]/div/div[1]');
     }
   
     async open() {
-      await browser.url('https://www.saucedemo.com/');
+      await browser.url('https://kasirdemo.belajarqa.com/');
     }
   
-    async login(username, password) {
-      await this.userNameInput.setValue(username);
+    async login(email, password) {
+      await this.emailInput.setValue(email);
       await this.passwordInput.setValue(password);
       await this.loginButton.click();
     }
