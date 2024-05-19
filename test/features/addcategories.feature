@@ -1,11 +1,14 @@
-Feature: Saudemo Login Scenario
+Feature: Add Categories and Add Product
 
     @all
-    Scenario: login successfully with valid credintials
-    Given I open Saucedemo website
+    Scenario: Add Categories
+    Given I open Kasirdemo website
     When I login with valid credentials
     When I should be on the dashboard page
-    Then I logout
+    When I click categories
+    When I fill form categories
+    When I click button simpan
+    Then I get alert success
 
 
     
